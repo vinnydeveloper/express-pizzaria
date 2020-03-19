@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('includes/head', {titulo:tituloDaPagina})%>
+<body>
+    <%- include('includes/header') %>
+    <div class="container">
+        <section class="row p-5">
+
+        <% if(cardapio != undefined && cardapio.length > 0) {%>  
+
+            
+       <% cardapio.forEach(pizza =>{ %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= pizza.nome %></h5>
+                    <p class="card-text">R$ <%= pizza.preco %></p>
+                    </div>
+                </div>
+            </div>
+       <% }) %>
+        
+        <% } else { %>
+            <h1>Não tem pizzas cadastradas no sistema!</h1>
+        <% } %>
+          
+        </section>
+    </div>
+</body>
+</html>
