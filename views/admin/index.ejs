@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('includes/head')%>
+    <%- include('../includes/head', {titulo:"Pizzaria"})%>
 <body>
-    <%- include('includes/header')%>
+    <%- include('../includes/header')%>
     <h1>Olá <%= teste %></h1>
     <ul>
         <% produtos.forEach(produto=>{ %>
