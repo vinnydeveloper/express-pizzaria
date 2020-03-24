@@ -9,5 +9,8 @@ route.get('/cadastrar/:pizza/:preco', (req, res)=>{
 })
 
 route.get('/ver', cardapioController.listarCardapio)
+route.get('/cadastro', cardapioController.viewFormCadastro)
+
+route.post('/cadastro', cardapioController.criarPizza)
 
 module.exports = route

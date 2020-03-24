@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('includes/head', {titulo:"Sucesso"}) %> 
+    <body>
+        <%- include('includes/header') %> 
+
+        <main class="container">
+                <div class="alert alert-success" role="alert">
+                   Olá <%= nomeComprador %>,seu pedido da pizza <%= nomePizza %> foi feito com sucesso!
+                </div>
+        </main>
+           
+    </body>
+</html>

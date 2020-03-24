@@ -8,5 +8,9 @@ function listarCardapio(){
     return cardapio
 }
 
+function cadastrarPizza(nome, preco){
+    return cardapio.push({nome, preco})
+}
 
-module.exports = {listarCardapio}
+
+module.exports = {listarCardapio, cadastrarPizza}
