@@ -16,5 +16,13 @@ function cadastrarPizza(nome, preco){
    return fs.writeFileSync(db, JSON.stringify(listaCardapio))
 }
 
+function deletarPizza(index){
+    let listaCardapio = fs.readFileSync(db, {encoding:'utf-8'})
+    listaCardapio = JSON.parse(listaCardapio)   
+     listaCardapio.splice(index, 1)
 
-module.exports = {listarCardapio, cadastrarPizza}
+    // let listaAtualizada = listaCardapio.filter((pizza, posicao)=> posicao!=index)
+    return fs.writeFileSync(db, JSON.stringify(listaCardapio))
+}
+
+module.exports = {listarCardapio, cadastrarPizza, deletarPizza}

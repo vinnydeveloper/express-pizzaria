@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const methodOverride = require('method-override')
 
 let rotasUsuario = require('./routes/usuarioRoute')
 let rotasCardapio = require('./routes/cardapioRoute')
@@ -10,7 +11,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join('/public')))
 
 app.use(express.urlencoded({extended:true}));
-//localhost.com.br/css/style.css
+
+app.use(methodOverride("_method"))
 app.get('/:nome', (req, res)=>
     {
 
