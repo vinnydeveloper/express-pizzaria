@@ -1,15 +1,19 @@
-let cardapio = [
-    {nome:"Calamussa", preco:"R$30,00"},
-    {nome:"Frango com Catupiry", preco:"R$35,00"},
-    {nome:"Romanesca", preco:"R$35,00"}
-]
+const fs = require('fs')
+const path = require('path')
+
+const db = path.join('cardapio.json')
 
 function listarCardapio(){
-    return cardapio
+    let listaCardapio = fs.readFileSync(db, {encoding:'utf-8'})
+    listaCardapio = JSON.parse(listaCardapio) 
+    return listaCardapio
 }
 
 function cadastrarPizza(nome, preco){
-    return cardapio.push({nome, preco})
+   let listaCardapio = fs.readFileSync(db, {encoding:'utf-8'})
+   listaCardapio = JSON.parse(listaCardapio)  
+   listaCardapio.push({nome, preco})
+   return fs.writeFileSync(db, JSON.stringify(listaCardapio))
 }
 
 

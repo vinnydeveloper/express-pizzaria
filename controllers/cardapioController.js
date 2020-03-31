@@ -12,7 +12,6 @@ let cardapioController = {
         Cardapio.cadastrarPizza(req.body.nomePizza, req.body.precoPizza);
         res.redirect('/cardapio/ver')
     }
-
 }
  
 module.exports = cardapioController
