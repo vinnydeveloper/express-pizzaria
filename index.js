@@ -8,8 +8,7 @@ let rotasPedido = require('./routes/pedidoRoute');
 
 let app = express()
 app.set('view engine', 'ejs');
-app.use(express.static(path.join('/public')))
-
+app.use(express.static(path.join('public')))
 app.use(express.urlencoded({extended:true}));
 
 app.use(methodOverride("_method"))

@@ -9,7 +9,8 @@ let cardapioController = {
         res.render('cadastroPizza')
     },
     criarPizza:(req, res) =>{
-        Cardapio.cadastrarPizza(req.body.nomePizza, req.body.precoPizza);
+        let [novaPizza] = req.files
+        Cardapio.cadastrarPizza(req.body.nomePizza, req.body.precoPizza, novaPizza.filename);
         res.redirect('/cardapio/ver')
     },
 

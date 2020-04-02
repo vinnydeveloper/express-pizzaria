@@ -13,6 +13,13 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
+                        <% if(pizza.img != undefined || pizza.img != null){%>
+                            <img src="/cardapioImg/<%= pizza.img %>" style="height: 200px;object-fit: cover;"
+                            class="card-img-top" alt="Imagem da pizza"/>
+                        <% } else { %>
+                            <img style="height: 200px;object-fit: cover;" src="/cardapioImg/padrao.jpg" class="card-img-top" alt="Imagem da pizza"/>
+                        <% } %>
+
                     <h5 class="card-title"><%= pizza.nome %></h5>
                     <p class="card-text">R$ <%= pizza.preco %></p>
                     </div>

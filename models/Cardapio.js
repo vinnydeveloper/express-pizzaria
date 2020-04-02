@@ -9,10 +9,10 @@ function listarCardapio(){
     return listaCardapio
 }
 
-function cadastrarPizza(nome, preco){
+function cadastrarPizza(nome, preco, img){
    let listaCardapio = fs.readFileSync(db, {encoding:'utf-8'})
    listaCardapio = JSON.parse(listaCardapio)  
-   listaCardapio.push({nome, preco})
+   listaCardapio.push({nome, preco, img})
    return fs.writeFileSync(db, JSON.stringify(listaCardapio))
 }
 
