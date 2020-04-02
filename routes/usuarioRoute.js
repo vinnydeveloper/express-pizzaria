@@ -1,10 +1,12 @@
 const express = require('express')
-
+const UsuarioController = require('../controllers/usuarioController')
 let route = express.Router()
 
-route.get('/:nome', (req,res)=>{
-    // let nomeDigitado = req.params.nome
-    let {nome} = req.params
-    res.send(`Seja bem vindo ${nome}`)
-})
+
+
+route.get('/cadastro', UsuarioController.viewFormCadastro)
+route.post('/cadastro', UsuarioController.salvarCadastro)
+
+route.get('/login', UsuarioController.viewFormLogin)
+route.post('/login', UsuarioController.login)
 module.exports = route;

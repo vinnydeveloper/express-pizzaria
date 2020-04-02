@@ -4,6 +4,9 @@
 <body>
     <%- include('includes/header') %>
     <div class="container">
+        <% if(typeof(usuarioLogado) != 'undefined'){ %>
+            <h1>Olá <%=usuarioLogado%></h1>
+        <% } %>
         <section class="row p-5">
 
         <% if(cardapio != undefined && cardapio.length > 0) {%>  

@@ -3,7 +3,14 @@ const Cardapio = require('../models/Cardapio');
 let cardapioController = {
     listarCardapio: (req, res)=>{
         let listaDePizza = Cardapio.listarCardapio();
-        res.render('cardapio', {cardapio:listaDePizza, tituloDaPagina:"Será que da certo?"})
+        let {usuarioLogado} = req.session
+
+        if(usuarioLogado != undefined && usuarioLogado != null){
+            res.render('cardapio', {cardapio:listaDePizza, tituloDaPagina:"Será que da certo?", usuarioLogado})
+        }else {
+            res.render('cardapio', {cardapio:listaDePizza, tituloDaPagina:"Será que da certo?"})
+        }
+       
     },
     viewFormCadastro: (req, res)=>{
         res.render('cadastroPizza')

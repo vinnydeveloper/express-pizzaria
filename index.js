@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const methodOverride = require('method-override')
-
+const session = require('express-session')
 let rotasUsuario = require('./routes/usuarioRoute')
 let rotasCardapio = require('./routes/cardapioRoute')
 let rotasPedido = require('./routes/pedidoRoute');
@@ -10,7 +10,11 @@ let app = express()
 app.set('view engine', 'ejs');
 app.use(express.static(path.join('public')))
 app.use(express.urlencoded({extended:true}));
-
+app.use(session({
+    secret:'hdsbvhjdbvu0',
+    resave:true,
+    saveUninitialized:true,
+}))
 app.use(methodOverride("_method"))
 app.get('/:nome', (req, res)=>
     {
