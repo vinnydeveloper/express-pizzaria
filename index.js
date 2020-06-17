@@ -32,4 +32,4 @@ app.use('/pedido', rotasPedido);
 
 
 
-app.listen(3000, ()=>console.log("Servidor rodando perfeitamente", path.join('/public')))
+app.listen(process.env.PORT || 8000, ()=>console.log("Servidor rodando perfeitamente", path.join('/public')))
